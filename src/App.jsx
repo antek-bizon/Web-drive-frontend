@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import styles from './App.module.css';
+import { Flex, HopeProvider } from '@hope-ui/solid'
+import Login from './userValidation/Login'
+import { Toaster } from 'solid-toast'
 
-function App() {
+function App () {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <HopeProvider>
+        <Flex w='100vw' h='100vh' css={{ backgroundImage: 'url(https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?cs=srgb&dl=pexels-joyston-judah-933054.jpg)', backgroundSize: 'cover' }}>
+          <Login />
+        </Flex>
+      </HopeProvider>
+      <Toaster position='top-center' />
+    </>
+  )
 }
 
-export default App;
+export default App
